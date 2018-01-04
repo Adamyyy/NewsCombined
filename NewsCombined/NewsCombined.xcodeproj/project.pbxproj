@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841E7BE31FFE642E00223E0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 841E7BE21FFE642E00223E0F /* GoogleService-Info.plist */; };
 		844007CD1FFD6A07006C7FBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844007CC1FFD6A07006C7FBD /* AppDelegate.swift */; };
 		844007CF1FFD6A07006C7FBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844007CE1FFD6A07006C7FBD /* ViewController.swift */; };
 		844007D21FFD6A07006C7FBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844007D01FFD6A07006C7FBD /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841E7BE21FFE642E00223E0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		844007C91FFD6A06006C7FBD /* NewsCombined.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsCombined.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844007CC1FFD6A07006C7FBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844007CE1FFD6A07006C7FBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		844007CB1FFD6A06006C7FBD /* NewsCombined */ = {
 			isa = PBXGroup;
 			children = (
+				841E7BE21FFE642E00223E0F /* GoogleService-Info.plist */,
 				844007CC1FFD6A07006C7FBD /* AppDelegate.swift */,
 				844007CE1FFD6A07006C7FBD /* ViewController.swift */,
 				844007D01FFD6A07006C7FBD /* Main.storyboard */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				844007D71FFD6A07006C7FBD /* LaunchScreen.storyboard in Resources */,
+				841E7BE31FFE642E00223E0F /* GoogleService-Info.plist in Resources */,
 				844007D41FFD6A07006C7FBD /* Assets.xcassets in Resources */,
 				844007D21FFD6A07006C7FBD /* Main.storyboard in Resources */,
 			);
