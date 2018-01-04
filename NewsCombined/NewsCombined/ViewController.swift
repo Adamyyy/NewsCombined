@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     var Testo : String = ""
     var thisisdumbe : String = ""
-    
+    var finaltest : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
