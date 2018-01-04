@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     var Testo : String = ""
+    var thisisdumbe : String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
