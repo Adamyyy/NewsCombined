@@ -16,6 +16,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
     
+    @IBOutlet weak var errorTextLabelRegister: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +35,11 @@ class RegisterViewController: UIViewController {
         FIRAuth.auth()?.createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!, completion: { (user, error) in
             if error != nil {
                 print(error)
+                self.errorTextLabelRegister.text = "Email/Password error"
                 
             }
+
+            
             else {
                 print("Created new user")
                 self.performSegue(withIdentifier: "goToChat", sender: self)

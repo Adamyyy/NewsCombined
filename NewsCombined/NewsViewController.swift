@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-
-class NewsViewController: UIViewController {
+class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     // Declare instance variables here
 
@@ -26,7 +26,8 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         
         //TODO: Set yourself as the delegate and datasource here:
-        
+        messageTableView.dataSource = self
+        messageTableView.delegate = self
         
         
         //TODO: Set yourself as the delegate of the text field here:
@@ -37,9 +38,13 @@ class NewsViewController: UIViewController {
         
         
 
-        //TODO: Register your MessageCell.xib file here:
-
+        //TODO: Register your Cell.xib file here:
+        messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        configureTableView()
+      
         
+        
+
     }
 
     ///////////////////////////////////////////
@@ -49,11 +54,19 @@ class NewsViewController: UIViewController {
     
     
     //TODO: Declare cellForRowAtIndexPath here:
-    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
+          let newsArray = ["First","Second", "Third"]
+        cell.messageBody.text = newsArray[indexPath.row]
+        
+        return cell
+    }
     
     
     //TODO: Declare numberOfRowsInSection here:
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
     
     
     //TODO: Declare tableViewTapped here:
@@ -61,7 +74,11 @@ class NewsViewController: UIViewController {
     
     
     //TODO: Declare configureTableView here:
-    
+    func configureTableView(){
+        messageTableView.rowHeight = UITableViewAutomaticDimension
+        messageTableView.estimatedRowHeight = 120.0
+        
+    }
     
     
     ///////////////////////////////////////////
@@ -106,9 +123,16 @@ class NewsViewController: UIViewController {
     
     @IBAction func logOutPressed(_ sender: AnyObject) {
         
-        //TODO: Log out the user and send them back to WelcomeViewController
-        
-        
+        do {
+            try FIRAuth.auth()?.signOut()
+        } catch  {
+            print ("Couldnt sign out")
+        }
+        guard (navigationController?.popToRootViewController(animated: true)) != nil
+            else {
+                print("This is first nav screen")
+                return
+        }
     }
     
 

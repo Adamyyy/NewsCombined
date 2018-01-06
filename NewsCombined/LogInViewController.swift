@@ -14,6 +14,7 @@ class LogInViewController: UIViewController {
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
     
+    @IBOutlet weak var errorTextLabelLogIn: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,8 +31,7 @@ class LogInViewController: UIViewController {
         //TODO: Log in the user
         FIRAuth.auth()?.signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { (user, error) in
             if error != nil {
-                print(error)
-            }
+                self.errorTextLabelLogIn.text = "Email/Password error"            }
             else {
                 print("Loged in")
                 self.performSegue(withIdentifier: "goToChat", sender: self)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomMessageCell: UITableViewCell {
+class CustomCell: UITableViewCell {
 
 
     @IBOutlet var messageBackground: UIView!
