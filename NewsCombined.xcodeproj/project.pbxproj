@@ -19,6 +19,7 @@
 		63EBB3051D98004B004175E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EBB3041D98004B004175E5 /* LaunchScreen.storyboard */; };
 		847E58812000234800E2CDF8 /* NewsCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E58802000234800E2CDF8 /* NewsCluster.swift */; };
 		84BA3F121FFEE80F00FB1A56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BA3F111FFEE80F00FB1A56 /* GoogleService-Info.plist */; };
+		84E9125B2005140F007A87D9 /* FireBaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9125A2005140F007A87D9 /* FireBaseUser.swift */; };
 		A89EBBE254C326B220DD7C05 /* Pods_NewsCombined.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFB125442B07F31AA333E42 /* Pods_NewsCombined.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		70CAA3990DD77593AE80DD02 /* Pods-NewsCombined.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCombined.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsCombined/Pods-NewsCombined.debug.xcconfig"; sourceTree = "<group>"; };
 		847E58802000234800E2CDF8 /* NewsCluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCluster.swift; sourceTree = "<group>"; };
 		84BA3F111FFEE80F00FB1A56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84E9125A2005140F007A87D9 /* FireBaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseUser.swift; sourceTree = "<group>"; };
 		8DFB125442B07F31AA333E42 /* Pods_NewsCombined.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCombined.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE08285C871AD8A47D3BBDA4 /* Pods-NewsCombined.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCombined.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsCombined/Pods-NewsCombined.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				847E58802000234800E2CDF8 /* NewsCluster.swift */,
+				84E9125A2005140F007A87D9 /* FireBaseUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -250,6 +253,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -257,6 +262,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -293,6 +300,7 @@
 				847E58812000234800E2CDF8 /* NewsCluster.swift in Sources */,
 				63E28B321B9A337600FBF6E0 /* RegisterViewController.swift in Sources */,
 				63E28B311B9A337600FBF6E0 /* LogInViewController.swift in Sources */,
+				84E9125B2005140F007A87D9 /* FireBaseUser.swift in Sources */,
 				63E28B2F1B9A337600FBF6E0 /* AppDelegate.swift in Sources */,
 				63E28B301B9A337600FBF6E0 /* NewsViewController.swift in Sources */,
 			);

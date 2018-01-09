@@ -29,7 +29,9 @@ class LogInViewController: UIViewController {
 
         
         //TODO: Log in the user
-        FIRAuth.auth()?.signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { (user, error) in
+        
+        
+        Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { (user, error) in
             if error != nil {
                 self.errorTextLabelLogIn.text = "Email/Password error"            }
             else {

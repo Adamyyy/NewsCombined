@@ -122,19 +122,20 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     @IBAction func logOutPressed(_ sender: AnyObject) {
-        
+        let firebaseAuth = Auth.auth()
         do {
-            try FIRAuth.auth()?.signOut()
-        } catch  {
-            print ("Couldnt sign out")
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
         }
         guard (navigationController?.popToRootViewController(animated: true)) != nil
             else {
                 print("This is first nav screen")
                 return
-        }
-    }
     
 
 
+}
+
+}
 }

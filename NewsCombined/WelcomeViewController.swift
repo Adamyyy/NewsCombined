@@ -11,6 +11,7 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    let Firebase = ModelFirebase ()
    
     override func viewDidLoad() {
         super.viewDidLoad()

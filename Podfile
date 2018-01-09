@@ -6,7 +6,7 @@ target 'NewsCombined' do
   use_frameworks!
 
   # Pods for NewsCombined
-pod 'Firebase', '~>3.17'
+pod 'Firebase'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'SVProgressHUD'
