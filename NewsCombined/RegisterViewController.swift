@@ -34,7 +34,7 @@ class RegisterViewController: UIViewController {
         
       Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!, completion: { (user, error) in
             if error != nil {
-                print(error ?? <#default value#>)
+             
                 self.errorTextLabelRegister.text = "Email/Password error"
                 
             }
