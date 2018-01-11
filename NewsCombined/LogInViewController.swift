@@ -36,7 +36,7 @@ class LogInViewController: UIViewController {
                 self.errorTextLabelLogIn.text = "Email/Password error"            }
             else {
                 print("Loged in")
-                self.performSegue(withIdentifier: "goToChat", sender: self)
+                self.performSegue(withIdentifier: "goToNews", sender: self)
             }
         }
 

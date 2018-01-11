@@ -11,7 +11,7 @@ import Firebase
 class RegisterViewController: UIViewController {
 
     
-    //TextFields
+    
 
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
@@ -42,7 +42,7 @@ class RegisterViewController: UIViewController {
             
             else {
                 print("Created new user")
-                self.performSegue(withIdentifier: "goToChat", sender: self)
+                self.performSegue(withIdentifier: "goToNews", sender: self)
                 
             }
         })
