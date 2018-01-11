@@ -37,13 +37,24 @@ class ModelFirebase{
         FirebaseApp.configure()
         
         ref = Database.database().reference()
+           
         
-        
-        
-        ref?.child("ios test").setValue("this is ios test")
+       
         
     }
     
+    func LogInUser(Email : String , Password : String) ->String {
+        
+        self.results = ""
+        Auth.auth().signIn(withEmail: Email, password: Password, completion: { (user, error) in
+            if error != nil {
+                self.results = "Email/Password error"
+            }
+            
+        })
+        return self.results
+        
+    }
     
     
     
@@ -51,32 +62,15 @@ class ModelFirebase{
     func RegisterUser(Email : String , Password : String) ->String {
         
         self.results = ""
-        
-        
-        
-        
-        
         Auth.auth().createUser(withEmail: Email, password: Password, completion: { (user, error) in
-            
             if error != nil {
-                
-                
-                
                 self.results = "Email/Password error"
-                
-                
-                
             }
-            
-            
-            
-            
-            
-        })
         
+        })
         return self.results
         
-    }
+    }// Auth.auth().signIn(withEmail: Email, password: Password) { (user, error) in
     
     
     

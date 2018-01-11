@@ -6,10 +6,10 @@
 
 
 import UIKit
-import Firebase
 
 class LogInViewController: UIViewController {
-
+    
+    var FBunit : ModelFirebase? = nil
     //Textfields 
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
@@ -17,6 +17,9 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var errorTextLabelLogIn: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if FBunit == nil {
+            FBunit = ModelFirebase ()
+        }
         
     }
 
@@ -30,19 +33,22 @@ class LogInViewController: UIViewController {
         
         //TODO: Log in the user
         
+        var check : String = (FBunit?.LogInUser(Email: emailTextfield.text!, Password: passwordTextfield.text!))!
         
-        Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { (user, error) in
-            if error != nil {
-                self.errorTextLabelLogIn.text = "Email/Password error"            }
-            else {
-                print("Loged in")
-                self.performSegue(withIdentifier: "goToNews", sender: self)
-            }
+        if check == "Email/Password error" {
+            self.errorTextLabelLogIn.text = check
         }
+            
+            
+            
+        else {
+          //  print("Created new user")
+            self.performSegue(withIdentifier: "goToNews", sender: self)
+            
+        }
+        
+    
+
 
     }
-    
-
-
-    
 }  

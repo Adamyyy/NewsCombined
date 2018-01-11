@@ -6,13 +6,14 @@
 //
 
 import UIKit
-import Firebase
+
 
 class RegisterViewController: UIViewController {
 
     
     
-
+    var FBunit : ModelFirebase? = nil
+    
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
     
@@ -20,6 +21,9 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if FBunit == nil {
+            FBunit = ModelFirebase ()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,21 +35,20 @@ class RegisterViewController: UIViewController {
     @IBAction func registerPressed(_ sender: AnyObject) {
         
 
+        var check : String = (FBunit?.RegisterUser(Email: emailTextfield.text!, Password: passwordTextfield.text!))!
         
-      Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!, completion: { (user, error) in
-            if error != nil {
-             
-                self.errorTextLabelRegister.text = "Email/Password error"
-                
-            }
+        if check == "Email/Password error" {
+                self.errorTextLabelRegister.text = check
+        }
+            
 
             
             else {
-                print("Created new user")
+                //print("Created new user")
                 self.performSegue(withIdentifier: "goToNews", sender: self)
                 
             }
-        })
+    
         
         
 
